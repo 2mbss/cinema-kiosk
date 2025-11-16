@@ -1,0 +1,493 @@
+/*
+   RECEIPT PAGE STYLES
+   Dark cinematic theme with premium receipt design
+*/
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    min-height: 100vh;
+    line-height: 1.3;
+    padding: 1rem 0;
+}
+
+/* Receipt Container */
+.receipt-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background: white;
+    color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: slideInUp 0.8s ease-out;
+}
+
+/* Receipt Header */
+.receipt-header {
+    background: #fff;
+    color: #000;
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid #000;
+}
+
+.cinema-name {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-bottom: 0.3rem;
+    letter-spacing: 1px;
+}
+
+.cinema-tagline {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.cinema-address,
+.cinema-contact {
+    font-size: 0.7rem;
+    margin-bottom: 0.1rem;
+    color: #666;
+}
+
+/* Receipt Body */
+.receipt-body {
+    padding: 1rem;
+}
+
+/* Transaction Info */
+.transaction-info {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #000;
+}
+
+.receipt-number {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 0.3rem;
+}
+
+.transaction-date {
+    color: #666;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Section Styling */
+.movie-section, .tickets-section, .addons-section, .total-section, .qr-section, .thank-you-section {
+    margin-bottom: 1rem;
+}
+
+.section-header {
+    margin-bottom: 0.5rem;
+}
+
+.section-header h2 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #000;
+    border-bottom: 1px solid #000;
+    padding-bottom: 0.2rem;
+    letter-spacing: 0.5px;
+}
+
+/* Movie Info */
+.movie-info {
+    display: flex;
+    gap: 0.8rem;
+    align-items: start;
+}
+
+.movie-poster {
+    width: 60px;
+    height: 90px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #000;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.placeholder-poster {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: bold;
+}
+
+.movie-details {
+    flex: 1;
+}
+
+.movie-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: #333;
+}
+
+.movie-meta {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.rating {
+    background: #000;
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 2px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.duration {
+    background: #666;
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 2px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.showtime {
+    color: #666;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* Tickets and Add-ons */
+.tickets-details, .addons-details {
+    background: #f9f9f9;
+    padding: 0.5rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.seats-info {
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #000;
+}
+
+.tickets-breakdown, .addons-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.line-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 0;
+    font-size: 0.8rem;
+}
+
+.line-item:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+/* Total Section */
+.total-section {
+    background: #f9f9f9;
+    padding: 0.8rem;
+    border-radius: 3px;
+    border: 1px solid #000;
+}
+
+.subtotals {
+    margin-bottom: 0.5rem;
+}
+
+.subtotals .line-item {
+    color: #666;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.grand-total {
+    border-top: 1px solid #000;
+    padding-top: 0.5rem;
+}
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 900;
+    color: #000;
+}
+
+/* QR Code Section */
+.qr-section {
+    text-align: center;
+    background: #f9f9f9;
+    padding: 0.8rem;
+    border-radius: 3px;
+}
+
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#qrcode {
+    border: 2px solid #4ecdc4;
+    border-radius: 8px;
+    padding: 1rem;
+    background: white;
+}
+
+.qr-text {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Thank You Section */
+.thank-you-section {
+    text-align: center;
+    background: #f0f0f0;
+    color: #000;
+    padding: 0.8rem;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ccc;
+}
+
+.thank-you-message h2 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.thank-you-message p {
+    font-size: 0.7rem;
+    margin-bottom: 0.2rem;
+}
+
+.reminder {
+    font-size: 0.6rem !important;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.policy {
+    font-size: 0.6rem !important;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Receipt Footer */
+.receipt-footer {
+    background: #f5f5f5;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer-info {
+    margin-bottom: 1rem;
+    color: #666;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.footer-info p {
+    margin-bottom: 0.2rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.print-btn {
+    background: #000;
+    color: white;
+}
+
+.print-btn:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+.home-btn {
+    background: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.home-btn:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+/* Error State */
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.error-content {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.error-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ff6b6b;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+        padding: 0;
+    }
+    
+    .receipt-container {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: none;
+    }
+    
+    .action-buttons {
+        display: none;
+    }
+    
+    .receipt-footer {
+        background: white;
+    }
+    
+    .thank-you-section {
+        background: #f0f0f0 !important;
+        color: black !important;
+    }
+    
+    .receipt-header {
+        background: #f0f0f0 !important;
+        color: black !important;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .receipt-container {
+        margin: 0;
+        border-radius: 10px;
+    }
+    
+    .receipt-body {
+        padding: 1.5rem;
+    }
+    
+    .movie-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .movie-poster {
+        align-self: center;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .receipt-header {
+        padding: 1.5rem;
+    }
+    
+    .cinema-name {
+        font-size: 1.5rem;
+    }
+    
+    .receipt-body {
+        padding: 1rem;
+    }
+    
+    .receipt-footer {
+        padding: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* QR Code Animation */
+#qrcode {
+    animation: fadeIn 1s ease-out 0.5s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

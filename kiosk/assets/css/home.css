@@ -1,0 +1,183 @@
+/* 
+   HOME PAGE STYLES
+   Dark cinematic theme for cinema kiosk home page
+*/
+
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main container - covers full screen */
+.home-container {
+    position: relative;
+    width: 100vw;           /* 100% of viewport width */
+    height: 100vh;          /* 100% of viewport height */
+    overflow: hidden;       /* Hide any content that goes outside */
+    cursor: pointer;        /* Show pointer cursor everywhere */
+    display: flex;
+    align-items: center;    /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+/* Background video styling */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* Make video cover entire area without distortion */
+    z-index: -2;           /* Put video behind everything else */
+}
+
+/* Fallback background image (if video doesn't work) */
+.fallback-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 100%);
+    background-size: cover;
+    z-index: -3;           /* Put behind video */
+}
+
+/* Dark overlay to make text readable over video */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    z-index: -1;           /* Above video, below content */
+}
+
+/* Main content area */
+.content {
+    text-align: center;
+    color: white;
+    z-index: 1;            /* Above overlay */
+    animation: fadeInUp 2s ease-out; /* Smooth entrance animation */
+}
+
+/* Welcome text styling */
+.welcome-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 4rem;       /* Large, bold text */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Shadow for readability */
+    letter-spacing: 2px;   /* Space between letters */
+}
+
+/* "Click anywhere to start" text */
+.start-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    animation: pulse 2s infinite; /* Pulsing animation to draw attention */
+}
+
+/* Decorative pulsing circle */
+.pulse-animation {
+    width: 120px;
+    height: 120px;
+    border: 3px solid rgba(229, 9, 20, 0.6);
+    border-radius: 50%;    /* Make it circular */
+    margin: 0 auto;
+    animation: pulseCircle 2s infinite;
+}
+
+/* Fade-in animation for content */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Start 30px below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);    /* End at normal position */
+    }
+}
+
+/* Pulsing animation for text */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        text-shadow: 0 2px 10px rgba(246, 196, 83, 0.5);
+    }
+    50% {
+        opacity: 0.7;
+        text-shadow: 0 2px 20px rgba(246, 196, 83, 0.8);
+    }
+}
+
+/* Pulsing animation for circle */
+@keyframes pulseCircle {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+        box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7);
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 0.4;
+        box-shadow: 0 0 0 20px rgba(229, 9, 20, 0);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+        box-shadow: 0 0 0 0 rgba(229, 9, 20, 0);
+    }
+}
+
+/* Fade out animation (used when transitioning to next page) */
+.fade-out {
+    animation: fadeOut 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .welcome-text {
+        font-size: 3.5rem;   /* Smaller text on mobile */
+    }
+    
+    .start-text {
+        font-size: 1.5rem;
+    }
+    
+    .pulse-animation {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-text {
+        font-size: 2.8rem;
+    }
+    
+    .start-text {
+        font-size: 1.3rem;
+    }
+    
+    .pulse-animation {
+        width: 80px;
+        height: 80px;
+    }
+}

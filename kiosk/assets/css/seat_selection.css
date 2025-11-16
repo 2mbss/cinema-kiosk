@@ -1,0 +1,366 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #111111;
+    color: white;
+    min-height: 100vh;
+}
+
+/* Top Title Section */
+.top-title {
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.top-title h1 {
+    font-size: 42px;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 2px;
+}
+
+/* Main Seat Selection Container */
+.main-container {
+    background: #282828;
+    border-radius: 12px;
+    padding: 30px;
+    width: 85%;
+    max-width: 1000px;
+    margin: 0 auto 20px;
+}
+
+/* Header Row Inside Container */
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.movie-info span,
+.showtime-info span {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Screen Indicator */
+.screen-indicator {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.screen-bar {
+    background: #000;
+    border: 2px solid #333;
+    padding: 8px 0;
+    border-radius: 8px;
+    margin: 0 auto;
+    color: #ccc;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Seat Grid */
+.seat-grid {
+    margin-bottom: 30px;
+}
+
+.seat-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.row-label {
+    width: 30px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.seats {
+    display: flex;
+    gap: 12px;
+    margin: 0 20px;
+    
+}
+
+/* Seat Styling */
+.seat {
+    width: 37px;
+    height: 37px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 8px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.seat.available {
+    background: #e1e1e1;
+    color: #000;
+    font-weight: bold;
+}
+
+.seat.available:hover {
+    background: #d0d0d0;
+    color: #000;
+}
+
+.seat.booked {
+    background: #FF0000;
+    color: #000;
+    font-weight: bold;
+    cursor: not-allowed;
+}
+
+.seat.selected {
+    background: #66CC66;
+    color: #000;
+    font-weight: bold;
+    border: 2px solid #000;
+}
+
+/* Seat Legend */
+.seat-legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-seat {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.legend-seat.available {
+    background: #e1e1e1;
+}
+
+.legend-seat.booked {
+    background: #FF0000;
+}
+
+.legend-seat.selected {
+    background: #66CC66;
+    border: 1px solid #000;
+}
+
+.legend-item span {
+    color: white;
+    font-size: 14px;
+}
+
+/* Order & Summary Section */
+.summary-panels {
+    display: flex;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+}
+
+.price-panel {
+    width: 70%;
+    background: #f2f2f2;
+    border-radius: 4px;
+    padding: 25px;
+    color: #333;
+}
+
+.order-panel {
+    width: 30%;
+    background: #111111;
+    border-radius: 4px;
+    padding: 20px;
+    border: 2px solid #fafafa;
+}
+
+.price-panel h3 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.order-panel h3 {
+    font-size: 25px;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.price-breakdown {
+    margin-top: 15px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 16px;
+    border-top: 2px solid #ccc;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.price-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 16px;
+    border-top: 2px solid #ccc;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.order-details {
+    text-align: center;
+    border-bottom: 2px solid #fafafa;
+    padding: 3px;
+}
+
+.order-details .movie-line {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.order-details .date-line,
+.order-details .time-line {
+    font-size: 15px;
+    margin-bottom: 3px;
+    color: #ffffff;
+}
+
+
+/* Bottom Navigation */
+.bottom-nav {
+    display: flex;
+    justify-content: center;
+    gap: 3.5rem;
+}
+
+.nav-btn {
+    padding: 1rem 4rem;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    text-transform: uppercase;
+}
+
+.back-btn,
+.cancel-btn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.back-btn:hover,
+.cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.next-btn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.next-btn:hover:not(:disabled) {
+    background: #333;
+}
+
+.next-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Error State */
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.error-content {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 15px;
+}
+
+.error-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ff6b6b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-title h1 {
+        font-size: 32px;
+    }
+    
+    .main-container {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .summary-panels {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .bottom-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .nav-btn {
+        width: 200px;
+    }
+    
+    .seat {
+        width: 24px;
+        height: 24px;
+        font-size: 7px;
+    }
+    
+    .seats {
+        gap: 6px;
+    }
+}
