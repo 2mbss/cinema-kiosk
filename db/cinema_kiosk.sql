@@ -78,7 +78,7 @@ CREATE TABLE sales_extras (
 
 -- Insert sample admin user (password: admin123)
 INSERT INTO admins (username, password) VALUES 
-('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
+('admin', '$2y$10$1n5PCD.Dk2F.AGtYRCiaz.i0YemTc87p/TQ0RT4dEIj5LEUEpSCHi');
 
 -- Insert sample movies
 INSERT INTO movies (title, description, trailer_url, poster_image, duration, rating) VALUES
